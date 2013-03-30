@@ -24,9 +24,12 @@ typedef enum
     DRWordSpotTop
 } DRWordSpot;
 
+//#define CHEEZBURGER
+
 // min lookup time for work (adds delay if lookup is faster then this time)
 static const NSTimeInterval kMinTime = 1.5;
 
+static const CGFloat kTopHeight = 50;
 static const CGFloat kWidth = 180;
 static const CGFloat kHeight = 113;
 
@@ -163,7 +166,7 @@ static const CGFloat kHeight = 113;
         });
     }];
     
-#if 0
+#ifdef CHEEZBURGER
     // Remote image thumbnail
     [self.remoteImageView cancelCurrentImageLoad];
     self.remoteImageView.image = nil;
@@ -188,7 +191,7 @@ static const CGFloat kHeight = 113;
     NSParameterAssert(self.currentSearchResultTagList == nil);
 
     // get def from result
-    NSLog(@"Res=%@", result);
+//    NSLog(@"Res=%@", result);
     
     NSString *definition = @"Fail! Network error";
     
@@ -211,17 +214,15 @@ static const CGFloat kHeight = 113;
         }
     }
     
-//    CGRect frame = CGRectMake(0,
-//                              0,
-//                              self.view.bounds.size.width,
-//                              250);
-    
-    
-    
     // Initalise and set the frame of the tag list
-    self.currentSearchResultTagList = [[DWTagList alloc] initWithFrame:UIEdgeInsetsInsetRect(self.view.bounds, UIEdgeInsetsMake(50, 0, 0, 0))];
+    self.currentSearchResultTagList = [[DWTagList alloc] initWithFrame:UIEdgeInsetsInsetRect(self.view.bounds, UIEdgeInsetsMake(kTopHeight, 0, 0, 0))];
     self.currentSearchResultTagList.tagDelegate = self;
     self.currentSearchResultTagList.backgroundColor = [UIColor clearColor];
+    
+#ifdef CHEEZBURGER
+    self.currentSearchResultTagList.frame = UIEdgeInsetsInsetRect(self.view.bounds, UIEdgeInsetsMake(kTopHeight, 0, self.remoteImageView.frame.size.height, 0));
+    NSLog(@"frame = %@", NSStringFromCGRect(self.currentSearchResultTagList.frame));
+#endif
     
     [self.currentSearchResultTagList setLabelBackgroundColor:[UIColor clearColor]];
     [self.currentSearchResultTagList setTextColor:[UIColor whiteColor]];
@@ -312,11 +313,11 @@ static const CGFloat kHeight = 113;
             // top
         case DRWordSpotTop:
             alpha = 1;
-            center = CGPointMake(self.view.bounds.size.width - view.bounds.size.width/2, view.frame.size.height/2 + 50);
+            center = CGPointMake(self.view.bounds.size.width - view.bounds.size.width/2, view.frame.size.height/2 + kTopHeight);
             break;
         case DRWordSpotTermTop:
             alpha = 1;
-            center = CGPointMake(self.view.bounds.size.width - view.bounds.size.width/2, view.frame.size.height/2);
+            center = CGPointMake(self.view.bounds.size.width - view.bounds.size.width/2, view.frame.size.height/2 + 7);
             break;
         case DRWordSpotTopOffScreen:
             center = CGPointMake(self.view.bounds.size.width - view.bounds.size.width/2, -view.frame.size.height/2);

@@ -15,7 +15,6 @@
 		301C6ACF17075D9E009A55FF /* DRAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C6ACE17075D9E009A55FF /* DRAppDelegate.m */; };
 		301C6AD117075D9E009A55FF /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AD017075D9E009A55FF /* Default.png */; };
 		301C6AD317075D9E009A55FF /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AD217075D9E009A55FF /* Default@2x.png */; };
-		301C6AD517075D9E009A55FF /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AD417075D9E009A55FF /* Default-568h@2x.png */; };
 		301C6AD817075D9E009A55FF /* DRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C6AD717075D9E009A55FF /* DRViewController.m */; };
 		301C6ADB17075D9E009A55FF /* DRViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AD917075D9E009A55FF /* DRViewController.xib */; };
 		301C6AE317075DC3009A55FF /* DRUrbanDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C6AE217075DC3009A55FF /* DRUrbanDictionary.m */; };
@@ -60,7 +59,6 @@
 		301C6ACE17075D9E009A55FF /* DRAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRAppDelegate.m; sourceTree = "<group>"; };
 		301C6AD017075D9E009A55FF /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		301C6AD217075D9E009A55FF /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		301C6AD417075D9E009A55FF /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		301C6AD617075D9E009A55FF /* DRViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DRViewController.h; sourceTree = "<group>"; };
 		301C6AD717075D9E009A55FF /* DRViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DRViewController.m; sourceTree = "<group>"; };
 		301C6ADA17075D9E009A55FF /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DRViewController.xib; sourceTree = "<group>"; };
@@ -188,7 +186,6 @@
 				301C6ACC17075D9E009A55FF /* UrbanLookup-Prefix.pch */,
 				301C6AD017075D9E009A55FF /* Default.png */,
 				301C6AD217075D9E009A55FF /* Default@2x.png */,
-				301C6AD417075D9E009A55FF /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -295,7 +292,6 @@
 				301C6AC917075D9E009A55FF /* InfoPlist.strings in Resources */,
 				301C6AD117075D9E009A55FF /* Default.png in Resources */,
 				301C6AD317075D9E009A55FF /* Default@2x.png in Resources */,
-				301C6AD517075D9E009A55FF /* Default-568h@2x.png in Resources */,
 				301C6ADB17075D9E009A55FF /* DRViewController.xib in Resources */,
 				301C6AE917076700009A55FF /* DRUrbanViewController.xib in Resources */,
 				301C6AEF17076D4B009A55FF /* background@2x.png in Resources */,
@@ -459,6 +455,7 @@
 				301C6AE017075D9E009A55FF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
