@@ -16,4 +16,7 @@
 #import "DRUrbanViewController.h"
 #import "DRCheezBurger.h"
 
+#import "GAITrackedViewController.h"
+#import "GAI.h"
+
 #endif

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DRViewController : UIViewController <UITextFieldDelegate, DRUrbanViewControllerDelegate>
+@interface DRViewController : GAITrackedViewController <UITextFieldDelegate, DRUrbanViewControllerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITextField *inputField;
 

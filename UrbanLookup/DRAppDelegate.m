@@ -19,6 +19,18 @@
     self.viewController = [[DRViewController alloc] initWithNibName:@"DRViewController" bundle:nil];
     self.window.rootViewController = self.viewController;
     [self.window makeKeyAndVisible];
+    
+    // Google Analytics
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    // Optional: set debug to YES for extra debugging information.
+    [GAI sharedInstance].debug = YES;
+    // Create tracker instance.
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-39754547-1"];
+    [tracker trackEventWithCategory:@"Application" withAction:@"Launch" withLabel:nil withValue:nil];
+    
     return YES;
 }
 

@@ -25,10 +25,6 @@
 		301C6AF017076D4B009A55FF /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AEE17076D4B009A55FF /* background.png */; };
 		301C6AF317076E4F009A55FF /* scream@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AF117076E4F009A55FF /* scream@2x.png */; };
 		301C6AF417076E4F009A55FF /* scream.png in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AF217076E4F009A55FF /* scream.png */; };
-		301C6AF617076EDB009A55FF /* wordvomit.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AF517076EDB009A55FF /* wordvomit.jpg */; };
-		301C6AF917077265009A55FF /* DRUrbanWord.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C6AF817077264009A55FF /* DRUrbanWord.m */; };
-		301C6AFC17077560009A55FF /* bubble.png in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AFA17077560009A55FF /* bubble.png */; };
-		301C6AFD17077560009A55FF /* bubble@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 301C6AFB17077560009A55FF /* bubble@2x.png */; };
 		301C6B0017077B7E009A55FF /* DWTagList.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C6AFF17077B7E009A55FF /* DWTagList.m */; };
 		301C6B0217077BA1009A55FF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301C6B0117077BA1009A55FF /* QuartzCore.framework */; };
 		301C6B0517078DEB009A55FF /* EAParticleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C6B0417078DEB009A55FF /* EAParticleView.m */; };
@@ -44,6 +40,12 @@
 		301C6B4C17079EEF009A55FF /* UIButton+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C6B4117079EEF009A55FF /* UIButton+WebCache.m */; };
 		301C6B4D17079EEF009A55FF /* UIImageView+WebCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 301C6B4317079EEF009A55FF /* UIImageView+WebCache.m */; };
 		301C6B4F17079F28009A55FF /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 301C6B4E17079F28009A55FF /* ImageIO.framework */; };
+		309A975B1709454900238472 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309A975A1709454900238472 /* Default-568h@2x.png */; };
+		309A976517094FBC00238472 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 309A976317094FBC00238472 /* libGoogleAnalytics.a */; };
+		309A976717094FEA00238472 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309A976617094FEA00238472 /* CoreData.framework */; };
+		309A976917094FF100238472 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 309A976817094FF100238472 /* SystemConfiguration.framework */; };
+		309A976C1709535300238472 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 309A976A1709535300238472 /* Icon.png */; };
+		309A976D1709535300238472 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 309A976B1709535300238472 /* Icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,11 +75,6 @@
 		301C6AEE17076D4B009A55FF /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = background.png; sourceTree = "<group>"; };
 		301C6AF117076E4F009A55FF /* scream@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "scream@2x.png"; sourceTree = "<group>"; };
 		301C6AF217076E4F009A55FF /* scream.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scream.png; sourceTree = "<group>"; };
-		301C6AF517076EDB009A55FF /* wordvomit.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = wordvomit.jpg; sourceTree = "<group>"; };
-		301C6AF717077264009A55FF /* DRUrbanWord.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DRUrbanWord.h; sourceTree = "<group>"; };
-		301C6AF817077264009A55FF /* DRUrbanWord.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DRUrbanWord.m; sourceTree = "<group>"; };
-		301C6AFA17077560009A55FF /* bubble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bubble.png; sourceTree = "<group>"; };
-		301C6AFB17077560009A55FF /* bubble@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bubble@2x.png"; sourceTree = "<group>"; };
 		301C6AFE17077B7E009A55FF /* DWTagList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DWTagList.h; sourceTree = "<group>"; };
 		301C6AFF17077B7E009A55FF /* DWTagList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DWTagList.m; sourceTree = "<group>"; };
 		301C6B0117077BA1009A55FF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -106,6 +103,17 @@
 		301C6B4217079EEF009A55FF /* UIImageView+WebCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+WebCache.h"; sourceTree = "<group>"; };
 		301C6B4317079EEF009A55FF /* UIImageView+WebCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+WebCache.m"; sourceTree = "<group>"; };
 		301C6B4E17079F28009A55FF /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		309A975A1709454900238472 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		309A975D17094FBC00238472 /* GAI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAI.h; sourceTree = "<group>"; };
+		309A975E17094FBC00238472 /* GAITrackedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITrackedViewController.h; sourceTree = "<group>"; };
+		309A975F17094FBC00238472 /* GAITracker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITracker.h; sourceTree = "<group>"; };
+		309A976017094FBC00238472 /* GAITransaction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransaction.h; sourceTree = "<group>"; };
+		309A976117094FBC00238472 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
+		309A976317094FBC00238472 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
+		309A976617094FEA00238472 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		309A976817094FF100238472 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		309A976A1709535300238472 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		309A976B1709535300238472 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,11 +121,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				309A976917094FF100238472 /* SystemConfiguration.framework in Frameworks */,
+				309A976717094FEA00238472 /* CoreData.framework in Frameworks */,
 				301C6B4F17079F28009A55FF /* ImageIO.framework in Frameworks */,
 				301C6B0217077BA1009A55FF /* QuartzCore.framework in Frameworks */,
 				301C6ABF17075D9E009A55FF /* UIKit.framework in Frameworks */,
 				301C6AC117075D9E009A55FF /* Foundation.framework in Frameworks */,
 				301C6AC317075D9E009A55FF /* CoreGraphics.framework in Frameworks */,
+				309A976517094FBC00238472 /* libGoogleAnalytics.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,6 +155,8 @@
 		301C6ABD17075D9E009A55FF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				309A976817094FF100238472 /* SystemConfiguration.framework */,
+				309A976617094FEA00238472 /* CoreData.framework */,
 				301C6B4E17079F28009A55FF /* ImageIO.framework */,
 				301C6B0117077BA1009A55FF /* QuartzCore.framework */,
 				301C6ABE17075D9E009A55FF /* UIKit.framework */,
@@ -156,20 +169,17 @@
 		301C6AC417075D9E009A55FF /* UrbanLookup */ = {
 			isa = PBXGroup;
 			children = (
+				309A976A1709535300238472 /* Icon.png */,
+				309A976B1709535300238472 /* Icon@2x.png */,
 				301C6ACD17075D9E009A55FF /* DRAppDelegate.h */,
 				301C6ACE17075D9E009A55FF /* DRAppDelegate.m */,
 				301C6AD617075D9E009A55FF /* DRViewController.h */,
 				301C6AD717075D9E009A55FF /* DRViewController.m */,
 				301C6AD917075D9E009A55FF /* DRViewController.xib */,
-				301C6AEA17076721009A55FF /* ASDepthModalViewController.h */,
-				301C6AEB17076721009A55FF /* ASDepthModalViewController.m */,
 				301C6AED17076D4B009A55FF /* background@2x.png */,
 				301C6AEE17076D4B009A55FF /* background.png */,
 				301C6AF117076E4F009A55FF /* scream@2x.png */,
 				301C6AF217076E4F009A55FF /* scream.png */,
-				301C6AF517076EDB009A55FF /* wordvomit.jpg */,
-				301C6AFA17077560009A55FF /* bubble.png */,
-				301C6AFB17077560009A55FF /* bubble@2x.png */,
 				301C6B0617078E25009A55FF /* DazStar.png */,
 				301C6AE4170766B0009A55FF /* Lib */,
 				301C6AC517075D9E009A55FF /* Supporting Files */,
@@ -186,6 +196,7 @@
 				301C6ACC17075D9E009A55FF /* UrbanLookup-Prefix.pch */,
 				301C6AD017075D9E009A55FF /* Default.png */,
 				301C6AD217075D9E009A55FF /* Default@2x.png */,
+				309A975A1709454900238472 /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -193,20 +204,14 @@
 		301C6AE4170766B0009A55FF /* Lib */ = {
 			isa = PBXGroup;
 			children = (
-				301C6B2E17079EEE009A55FF /* SDWebImage */,
-				301C6B0B170798BB009A55FF /* DRCheezBurger.h */,
-				301C6B0C170798BB009A55FF /* DRCheezBurger.m */,
-				301C6B0317078DEB009A55FF /* EAParticleView.h */,
-				301C6B0417078DEB009A55FF /* EAParticleView.m */,
-				301C6AFE17077B7E009A55FF /* DWTagList.h */,
-				301C6AFF17077B7E009A55FF /* DWTagList.m */,
-				301C6AF717077264009A55FF /* DRUrbanWord.h */,
-				301C6AF817077264009A55FF /* DRUrbanWord.m */,
+				301C6B501707B3DA009A55FF /* Vendors */,
 				301C6AE117075DC3009A55FF /* DRUrbanDictionary.h */,
 				301C6AE217075DC3009A55FF /* DRUrbanDictionary.m */,
 				301C6AE517076700009A55FF /* DRUrbanViewController.h */,
 				301C6AE617076700009A55FF /* DRUrbanViewController.m */,
 				301C6AE717076700009A55FF /* DRUrbanViewController.xib */,
+				301C6B0B170798BB009A55FF /* DRCheezBurger.h */,
+				301C6B0C170798BB009A55FF /* DRCheezBurger.m */,
 			);
 			name = Lib;
 			sourceTree = "<group>";
@@ -235,6 +240,34 @@
 				301C6B4317079EEF009A55FF /* UIImageView+WebCache.m */,
 			);
 			path = SDWebImage;
+			sourceTree = "<group>";
+		};
+		301C6B501707B3DA009A55FF /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				309A975C17094FB100238472 /* Google Analytics */,
+				301C6AEA17076721009A55FF /* ASDepthModalViewController.h */,
+				301C6AEB17076721009A55FF /* ASDepthModalViewController.m */,
+				301C6B0317078DEB009A55FF /* EAParticleView.h */,
+				301C6B0417078DEB009A55FF /* EAParticleView.m */,
+				301C6AFE17077B7E009A55FF /* DWTagList.h */,
+				301C6AFF17077B7E009A55FF /* DWTagList.m */,
+				301C6B2E17079EEE009A55FF /* SDWebImage */,
+			);
+			name = Vendors;
+			sourceTree = "<group>";
+		};
+		309A975C17094FB100238472 /* Google Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				309A975D17094FBC00238472 /* GAI.h */,
+				309A975E17094FBC00238472 /* GAITrackedViewController.h */,
+				309A975F17094FBC00238472 /* GAITracker.h */,
+				309A976017094FBC00238472 /* GAITransaction.h */,
+				309A976117094FBC00238472 /* GAITransactionItem.h */,
+				309A976317094FBC00238472 /* libGoogleAnalytics.a */,
+			);
+			name = "Google Analytics";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -298,10 +331,10 @@
 				301C6AF017076D4B009A55FF /* background.png in Resources */,
 				301C6AF317076E4F009A55FF /* scream@2x.png in Resources */,
 				301C6AF417076E4F009A55FF /* scream.png in Resources */,
-				301C6AF617076EDB009A55FF /* wordvomit.jpg in Resources */,
-				301C6AFC17077560009A55FF /* bubble.png in Resources */,
-				301C6AFD17077560009A55FF /* bubble@2x.png in Resources */,
 				301C6B0717078E26009A55FF /* DazStar.png in Resources */,
+				309A975B1709454900238472 /* Default-568h@2x.png in Resources */,
+				309A976C1709535300238472 /* Icon.png in Resources */,
+				309A976D1709535300238472 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -318,7 +351,6 @@
 				301C6AE317075DC3009A55FF /* DRUrbanDictionary.m in Sources */,
 				301C6AE817076700009A55FF /* DRUrbanViewController.m in Sources */,
 				301C6AEC17076721009A55FF /* ASDepthModalViewController.m in Sources */,
-				301C6AF917077265009A55FF /* DRUrbanWord.m in Sources */,
 				301C6B0017077B7E009A55FF /* DWTagList.m in Sources */,
 				301C6B0517078DEB009A55FF /* EAParticleView.m in Sources */,
 				301C6B0D170798BB009A55FF /* DRCheezBurger.m in Sources */,
@@ -418,6 +450,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UrbanLookup/UrbanLookup-Prefix.pch";
 				INFOPLIST_FILE = "UrbanLookup/UrbanLookup-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/UrbanLookup\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -430,6 +466,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "UrbanLookup/UrbanLookup-Prefix.pch";
 				INFOPLIST_FILE = "UrbanLookup/UrbanLookup-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/UrbanLookup\"",
+				);
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;

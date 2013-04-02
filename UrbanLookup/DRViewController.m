@@ -20,17 +20,13 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     [self.inputField becomeFirstResponder];
-    self.inputField.text = @"Hackathon";
-//    [self _handleInput:@"[Caffeine]"];
+    
+    self.trackedViewName = @"Main Menu";
 }
 
 - (void)viewDidAppear:(BOOL)animated
 {
     [super viewDidAppear:animated];
-    
-    UIImage *i = [[UIImage imageNamed:@"background"] resizableImageWithCapInsets:UIEdgeInsetsMake(200, 0, 0, 0)];
-    UIImageView *iv = [[UIImageView alloc] initWithImage:i];
-    [self.view insertSubview:iv atIndex:0];
 }
 
 - (void)didReceiveMemoryWarning
@@ -43,23 +39,17 @@
 {
     if ( text.length > 0 )
     {
-#if 0
-        [[DRUrbanDictionary sharedDictionary] lookupTerm:text withCompletion:^(BOOL success, id result) {
-            // Finished!
-            NSLog(@"Hey!");
-        }];
-#else
         dispatch_async(dispatch_get_main_queue(), ^{
             [self.inputField resignFirstResponder];
             if ( self.urbanController == nil )
             {
                 self.urbanController = [[DRUrbanViewController alloc] initWithNibName:nil bundle:nil];
                 self.urbanController.delegate = self;
-                [self.urbanController showDefinition:text];
             }
- 
+            [self.urbanController showDefinition:text];
+            
+            [self setOffScreen:YES animated:YES];
         });
-#endif
     }
 }
 
@@ -72,6 +62,16 @@
 - (void)urbanControllerDidDismiss
 {
     self.urbanController = nil;
+    [self setOffScreen:NO animated:YES];
+}
+
+- (void)setOffScreen:(BOOL)offScreen animated:(BOOL)animated
+{
+    [UIView animateWithDuration:animated?0.3:0 animations:^{
+        self.view.transform = offScreen?
+        CGAffineTransformMakeTranslation(0, -self.view.frame.size.height):
+        CGAffineTransformIdentity;
+    }];
 }
 
 @end

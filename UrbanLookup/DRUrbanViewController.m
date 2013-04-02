@@ -8,7 +8,6 @@
 
 #import "DRUrbanViewController.h"
 #import "ASDepthModalViewController.h"
-#import "DRUrbanWord.h"
 #import "EAParticleView.h"
 #import "DRCheezBurger.h"
 
@@ -24,6 +23,7 @@ typedef enum
     DRWordSpotTop
 } DRWordSpot;
 
+// TODO: Image search is slow.
 //#define CHEEZBURGER
 
 // min lookup time for work (adds delay if lookup is faster then this time)
@@ -65,9 +65,10 @@ static const CGFloat kHeight = 113;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor colorWithWhite:0 alpha:0.7];
-    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
-    [self.view addGestureRecognizer:self.tapRecognizer];
+    
+    // Tpa recognizer
+//    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
+//    [self.view addGestureRecognizer:self.tapRecognizer];
     
     self.lookupActivityIndicatorView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
     [self.lookupActivityIndicatorView setColor:[UIColor blackColor]];
@@ -75,7 +76,25 @@ static const CGFloat kHeight = 113;
     self.lookupActivityIndicatorView.center = CGPointMake(self.screamMan.bounds.size.width/2 - 40, self.screamMan.bounds.size.height/2);
     [self.screamMan addSubview:self.lookupActivityIndicatorView];
     [self setScreamManHidden:YES animated:NO];
+    
+    self.trackedViewName = @"Lookup";
 }
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+    if ( textField.text.length >= 1)
+    {
+        [self showDefinition:textField.text];
+        [textField resignFirstResponder];
+    }
+    return NO;
+}
+
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+    [self _removeOldWords];
+}
+
 
 - (void)showDefinition:(NSString *)term
 {
@@ -85,7 +104,16 @@ static const CGFloat kHeight = 113;
         return;
     }
     
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+
+    static NSInteger lookupCounter = 0;
+    [tracker sendEventWithCategory:@"UI Action"
+                        withAction:@"Show Definition"
+                         withLabel:term
+                         withValue:[NSNumber numberWithInt:++lookupCounter]];
+    
     // Clean up old terms
+    self.inputField.text = nil;
     [self _removeOldWords];
     
     // validate term
@@ -95,9 +123,14 @@ static const CGFloat kHeight = 113;
     // display controller (if needed)
     if ( self.isDisplayed == NO )
     {
-        [ASDepthModalViewController presentView:self.view
-                            withBackgroundColor:[UIColor blackColor]
-                            popupAnimationStyle:ASDepthModalAnimationNone];
+//        [ASDepthModalViewController presentView:self.view
+//                            withBackgroundColor:[UIColor blackColor]
+//                            popupAnimationStyle:ASDepthModalAnimationNone];
+        UIWindow *window = [[[UIApplication sharedApplication] delegate] window];
+        [window addSubview:self.view];
+        self.view.frame = window.bounds;    // fullscreen
+        [self setOffScreen:YES animated:NO];
+        [self setOffScreen:NO animated:YES];
     }
     
     // show the scream man
@@ -108,7 +141,7 @@ static const CGFloat kHeight = 113;
     {
         static const CGFloat kParticleViewWidth = 200;
         self.particleView = [[EAParticleView alloc] initStarsWithFrame:CGRectMake(self.view.bounds.size.width - kParticleViewWidth,
-                                                                                  300,
+                                                                                  -160 + self.view.bounds.size.height,
                                                                                   kParticleViewWidth,
                                                                                   self.view.bounds.size.height - 300)];
         [self.particleView setIsEmitting:NO];
@@ -244,7 +277,7 @@ static const CGFloat kHeight = 113;
 - (void)setScreamManHidden:(BOOL)hidden animated:(BOOL)animated
 {
     [UIView animateWithDuration:animated ? 0.3 : 0 delay:0 options:0 animations:^{
-        self.screamMan.transform = CGAffineTransformMakeTranslation(0, hidden ? self.screamMan.frame.size.height : 0);
+        self.screamMan.transform = CGAffineTransformMakeTranslation(0, hidden ? self.view.bounds.size.height - self.screamMan.bounds.origin.y : 0);
     } completion:nil];
 }
 
@@ -256,13 +289,13 @@ static const CGFloat kHeight = 113;
 - (void)dismiss
 {
     NSLog(@"Dismissing!");
-    [ASDepthModalViewController dismiss];
+//    [ASDepthModalViewController dismiss];    
     
     if ( [self.delegate respondsToSelector:@selector(urbanControllerDidDismiss)] )
     {
         [self.delegate urbanControllerDidDismiss];
     }
-//    [self setScreamManHidden:YES animated:YES];
+    [self setOffScreen:YES animated:YES];
     self.isDisplayed = NO;
 }
 
@@ -311,16 +344,16 @@ static const CGFloat kHeight = 113;
     switch (spot)
     {
             // top
-        case DRWordSpotTop:
+        case DRWordSpotTop: // definition tags when they are on top
             alpha = 1;
-            center = CGPointMake(self.view.bounds.size.width - view.bounds.size.width/2, view.frame.size.height/2 + kTopHeight);
+            center = CGPointMake(view.center.x, view.frame.size.height/2 + kTopHeight);
             break;
-        case DRWordSpotTermTop:
+        case DRWordSpotTermTop: // position of search term when on top
             alpha = 1;
-            center = CGPointMake(self.view.bounds.size.width - view.bounds.size.width/2, view.frame.size.height/2 + 7);
+            center = CGPointMake(view.center.x, view.frame.size.height/2 + 5);
             break;
         case DRWordSpotTopOffScreen:
-            center = CGPointMake(self.view.bounds.size.width - view.bounds.size.width/2, -view.frame.size.height/2);
+            center = CGPointMake(view.center.x, -view.frame.size.height/2);
             alpha = 0;
             remove = YES;
             break;
@@ -377,6 +410,21 @@ static const CGFloat kHeight = 113;
 {
     NSLog(@"Picked this!");
     [self showDefinition:tagName];
+}
+
+- (void)setOffScreen:(BOOL)offScreen animated:(BOOL)animated
+{
+    [UIView animateWithDuration:animated?0.3:0 animations:^{
+        self.view.transform = offScreen?
+        CGAffineTransformMakeTranslation(0, self.view.frame.size.height):
+        CGAffineTransformIdentity;
+    }completion:^(BOOL finished) {
+        if ( finished && offScreen && animated )
+        {
+            // ONLY REMOVE FROM SUPERVIEW NOW BECAUSE WE KNOW THIS CASE ONLY EXISTS WHEN DISMISSING
+            [self.view removeFromSuperview];
+        }
+    }];
 }
 
 @end

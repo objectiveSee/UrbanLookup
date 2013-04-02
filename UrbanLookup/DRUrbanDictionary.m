@@ -82,7 +82,6 @@ const NSString *kAPIURLFormatString = @"http://api.urbandictionary.com/v0/define
              }
              else
              {
-//                 NSLog(@"Response = %@", responseBody);
                  completionBlock(YES, responseBody);
              }
          }
