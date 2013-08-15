@@ -2,4 +2,4 @@ Urban Lookup
 
 Urban Dictionary API wrapper + word vomit UI
 
-![](http://grab.by/lckI)
+![](https://github.com/objectiveSee/UrbanLookup/blob/master/UrbanLookup/wordvomit.jpg?raw=true)
