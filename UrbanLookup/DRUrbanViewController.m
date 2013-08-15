@@ -11,6 +11,8 @@
 #import "EAParticleView.h"
 #import "DRCheezBurger.h"
 
+#import <QuartzCore/QuartzCore.h>
+
 #import "UIImageView+WebCache.h"
 
 typedef enum
@@ -65,6 +67,10 @@ static const CGFloat kHeight = 113;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.inputField.backgroundColor = [UIColor whiteColor];
+    self.inputField.layer.cornerRadius = 8;
+    self.inputField.textColor = [UIColor darkGrayColor];
     
     // Tpa recognizer
 //    self.tapRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismiss)];
@@ -289,7 +295,6 @@ static const CGFloat kHeight = 113;
 - (void)dismiss
 {
     NSLog(@"Dismissing!");
-//    [ASDepthModalViewController dismiss];    
     
     if ( [self.delegate respondsToSelector:@selector(urbanControllerDidDismiss)] )
     {
@@ -346,11 +351,11 @@ static const CGFloat kHeight = 113;
             // top
         case DRWordSpotTop: // definition tags when they are on top
             alpha = 1;
-            center = CGPointMake(view.center.x, view.frame.size.height/2 + kTopHeight);
+            center = CGPointMake(view.center.x, view.frame.size.height/2 + kTopHeight + 60);
             break;
         case DRWordSpotTermTop: // position of search term when on top
             alpha = 1;
-            center = CGPointMake(view.center.x, view.frame.size.height/2 + 5);
+            center = CGPointMake(view.center.x, view.frame.size.height/2 + 60);
             break;
         case DRWordSpotTopOffScreen:
             center = CGPointMake(view.center.x, -view.frame.size.height/2);

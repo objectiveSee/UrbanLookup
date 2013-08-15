@@ -31,6 +31,8 @@
     id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-39754547-1"];
     [tracker trackEventWithCategory:@"Application" withAction:@"Launch" withLabel:nil withValue:nil];
     
+    [application setStatusBarHidden:YES withAnimation:UIStatusBarAnimationNone];
+    
     return YES;
 }
 
@@ -48,6 +50,8 @@
 
 - (void)applicationWillEnterForeground:(UIApplication *)application
 {
+    [application setStatusBarHidden:YES];
+
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
